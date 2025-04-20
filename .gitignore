@@ -1,0 +1,11 @@
+# Godot 4 project ignore rules
+
+.import/
+.export/
+.cache/
+mono/
+android/
+.godot/
+*.import
+*.tmp
+*.godot_export
