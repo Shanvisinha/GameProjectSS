@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://c46vi8yr1i5kp"]
+
+[ext_resource type="Script" uid="uid://cxtky7p500pq8" path="res://Scenes/Npc/Npc.gd" id="1_7jsu0"]
+[ext_resource type="Texture2D" uid="uid://kvwaqfiwilcv" path="res://assets/images/security.png" id="1_e8ev6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7jsu0"]
+radius = 17.0
+height = 60.0
+
+[node name="Npc" type="CharacterBody2D"]
+script = ExtResource("1_7jsu0")
+
+[node name="DebugLabel" type="Label" parent="."]
+offset_right = 110.0
+offset_bottom = 131.0
+text = "123
+456
+789
+"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -1)
+scale = Vector2(1.82692, 1.68605)
+texture = ExtResource("1_e8ev6")
+offset = Vector2(10, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_7jsu0")
+
+[node name="NavAgent" type="NavigationAgent2D" parent="."]
+debug_enabled = true

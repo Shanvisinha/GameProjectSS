@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://dcchun7cyr20u"]
+
+[ext_resource type="FontFile" uid="uid://5tljv31ue5gj" path="res://assets/fonts/Font2.ttf" id="1_pbw6q"]
+[ext_resource type="Texture2D" uid="uid://pc8c0b8oa5pf" path="res://assets/images/item1.png" id="2_v1gob"]
+[ext_resource type="Texture2D" uid="uid://bf32n7hmrrkvm" path="res://assets/images/Item2.png" id="3_jw32o"]
+[ext_resource type="Texture2D" uid="uid://cw88jthsgc817" path="res://assets/images/Player.png" id="4_50glp"]
+[ext_resource type="Texture2D" uid="uid://kvwaqfiwilcv" path="res://assets/images/security.png" id="5_vy5pj"]
+[ext_resource type="Texture2D" uid="uid://byb3mpnstbabp" path="res://assets/images/space_bar.png" id="6_w20t6"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 4.0
+offset_right = 1149.0
+offset_bottom = 640.0
+color = Color(0.00688539, 0.0068854, 0.00688539, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 294.0
+offset_right = 1063.0
+offset_bottom = 396.0
+theme_override_colors/font_color = Color(0.640654, 0.26483, 0.679084, 1)
+theme_override_colors/font_shadow_color = Color(0.758192, 0.758192, 0.758192, 1)
+theme_override_fonts/font = ExtResource("1_pbw6q")
+theme_override_font_sizes/font_size = 60
+text = "Press              to start the game!"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Item1" type="Sprite2D" parent="."]
+position = Vector2(265, 533)
+rotation = 0.390481
+scale = Vector2(1.33824, 1.21912)
+texture = ExtResource("2_v1gob")
+
+[node name="Item2" type="Sprite2D" parent="."]
+position = Vector2(611, 161)
+rotation = -0.559008
+scale = Vector2(0.298702, 0.317857)
+texture = ExtResource("3_jw32o")
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(865, 129)
+rotation = 1.55949
+scale = Vector2(1.79809, 1.85082)
+texture = ExtResource("4_50glp")
+
+[node name="Security" type="Sprite2D" parent="."]
+position = Vector2(201, 102)
+rotation = -0.0171677
+scale = Vector2(1.49769, 1.811)
+texture = ExtResource("5_vy5pj")
+
+[node name="Security2" type="Sprite2D" parent="."]
+position = Vector2(927.117, 529.301)
+rotation = -1.70918
+scale = Vector2(1.88053, 2.06779)
+texture = ExtResource("5_vy5pj")
+
+[node name="SpaceBar" type="Sprite2D" parent="."]
+position = Vector2(362, 339)
+scale = Vector2(0.123782, 0.158382)
+texture = ExtResource("6_w20t6")
