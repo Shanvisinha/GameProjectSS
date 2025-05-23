@@ -1,14 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://piybilqchdpo"]
+[gd_scene load_steps=4 format=3 uid="uid://bwfbrlfob5j5e"]
 
-[ext_resource type="FontFile" uid="uid://cy2b1nindxb2s" path="res://assets/fonts/Font1.ttf" id="1_mb7aw"]
+[ext_resource type="Script" uid="uid://ndxonfd6csk" path="res://Scenes/GameUi/GameUi.gd" id="1_anb74"]
+[ext_resource type="LabelSettings" uid="uid://cv3dycugofki7" path="res://Resources/Lg_32_blue.tres" id="1_mb7aw"]
+[ext_resource type="LabelSettings" uid="uid://x5nr1vimn4e0" path="res://Resources/Green32.tres" id="3_anolp"]
 
 [node name="GameUi" type="Control"]
+process_mode = 3
 layout_mode = 3
-anchors_preset = 0
-offset_right = 1151.0
-offset_bottom = 648.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_anb74")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MC" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,11 +27,58 @@ theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="ScoreLabel" type="Label" parent="MarginContainer"]
+[node name="ScoreLabel" type="Label" parent="MC"]
 layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0.758192, 0.758192, 0.758192, 1)
-theme_override_fonts/font = ExtResource("1_mb7aw")
-theme_override_font_sizes/font_size = 30
-text = "0/500"
+text = "0 / 1000"
+label_settings = ExtResource("1_mb7aw")
+vertical_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="MC"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "0s"
+label_settings = ExtResource("1_mb7aw")
+vertical_alignment = 1
+
+[node name="ExitLabel" type="Label" parent="MC"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "GO TO EXIT"
+label_settings = ExtResource("3_anolp")
 horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.423529, 0.423529, 0.682353)
+
+[node name="GoLabel" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -16.5
+offset_right = 75.0
+offset_bottom = 16.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "GAME OVER"
+label_settings = ExtResource("3_anolp")
+horizontal_alignment = 1
+vertical_alignment = 1

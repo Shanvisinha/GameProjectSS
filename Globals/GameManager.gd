@@ -5,6 +5,7 @@ const MAIN = preload("res://Scenes/Main/Main.tscn")
 const LEVEL = preload("res://Scenes/Level/Level.tscn")
 
 
+
 func load_main_scene():
 	get_tree().change_scene_to_packed(MAIN)
 

@@ -24,6 +24,9 @@ func _ready() -> void:
 	SignalHub.on_pickup_collected.connect(on_pickup_collected)
 	SignalHub.on_player_died.connect(on_player_died)
 	SignalHub.on_exit.connect(on_exit)
+	_pickups_count = \
+			get_tree().get_nodes_in_group(PickUp.GROUP_NAME).size()
+	update_score()
 
 
 func _process(delta: float) -> void:
@@ -44,12 +47,12 @@ func stop_game() -> void:
 
 
 func on_player_died() -> void:
-	go_label.text = "Game Over!!"
+	go_label.text = "Heist Failed!!"
 	stop_game()
 
 
 func on_exit() -> void:
-	go_label.text = "Well Done!!" % _time
+	go_label.text = "Heist successful!! You took %.1f seconds" % _time
 	stop_game()
 
 			
