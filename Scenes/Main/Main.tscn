@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://y7ni34fv407h"]
+[gd_scene load_steps=15 format=3 uid="uid://y7ni34fv407h"]
 
 [ext_resource type="Script" uid="uid://cpompimojpq7s" path="res://Scenes/Main/Main.gd" id="1_p8rbg"]
 [ext_resource type="Shader" uid="uid://cer2lxoom4lvw" path="res://Scenes/Main/Main.gdshader" id="2_5s61s"]
@@ -8,13 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://l3jrq7r3sw3" path="res://assets/images/item1.png" id="5_7npjy"]
 [ext_resource type="Texture2D" uid="uid://cu2kneldfp383" path="res://assets/images/survivor1_gun.png" id="6_7npjy"]
 [ext_resource type="Texture2D" uid="uid://c8mdmjo5etxmc" path="res://assets/images/space_bar.png" id="8_5s61s"]
+[ext_resource type="Shader" uid="uid://cp5n8qvfevvka" path="res://Scenes/Main/Main2.gdshader" id="9_7npjy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7npjy"]
 shader = ExtResource("2_5s61s")
 
 [sub_resource type="LabelSettings" id="LabelSettings_cmk6n"]
 font = ExtResource("2_qtv3y")
-font_size = 64
+font_size = 40
 font_color = Color(0.491698, 0.189386, 0.565805, 1)
 outline_size = 6
 outline_color = Color(0.0784314, 0.0784314, 0.372549, 1)
@@ -23,6 +24,17 @@ outline_color = Color(0.0784314, 0.0784314, 0.372549, 1)
 font = ExtResource("2_qtv3y")
 font_size = 32
 font_color = Color(0.869806, 0.733868, 0.953118, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4vhfm"]
+shader = ExtResource("9_7npjy")
+shader_parameter/glitch_strength = 0.02
+shader_parameter/glitch_speed = 10.0
+shader_parameter/glitch_frequency = 5.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_dvlhv"]
+font = ExtResource("2_qtv3y")
+font_size = 50
+font_color = Color(0.579301, 0.000264045, 0.585188, 1)
 
 [node name="Main" type="Control"]
 process_mode = 3
@@ -42,7 +54,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0.584314, 0.584314, 1)
+color = Color(0.726325, 0.295322, 0.78123, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -57,13 +69,13 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "PRESS               TO PLAY"
+text = "PRESS                  TO PLAY"
 label_settings = SubResource("LabelSettings_cmk6n")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Obj1" type="Sprite2D" parent="."]
-position = Vector2(265, 151)
+position = Vector2(183, 154)
 scale = Vector2(0.353896, 0.38)
 texture = ExtResource("4_aw1lf")
 
@@ -80,21 +92,31 @@ scale = Vector2(1.27257, 1.43266)
 texture = ExtResource("5_5s61s")
 
 [node name="Player" type="Sprite2D" parent="."]
-position = Vector2(930.851, 168.255)
+position = Vector2(1000, 150)
 rotation = 2.82353
 scale = Vector2(1.71268, 1.68252)
 texture = ExtResource("6_7npjy")
 
 [node name="SpaceBar" type="Sprite2D" parent="."]
-position = Vector2(546, 312)
-scale = Vector2(0.138402, 0.155945)
+position = Vector2(561, 318)
+scale = Vector2(0.0984408, 0.103314)
 texture = ExtResource("8_5s61s")
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 258.0
-offset_top = 413.0
-offset_right = 907.0
-offset_bottom = 562.0
+offset_left = 270.0
+offset_top = 376.0
+offset_right = 919.0
+offset_bottom = 525.0
 text = "Collect all items and escape the facility!"
 label_settings = SubResource("LabelSettings_4vhfm")
+
+[node name="Label3" type="Label" parent="."]
+material = SubResource("ShaderMaterial_4vhfm")
+layout_mode = 0
+offset_left = 434.0
+offset_top = 192.0
+offset_right = 771.0
+offset_bottom = 258.0
+text = "Data & Dash"
+label_settings = SubResource("LabelSettings_dvlhv")
