@@ -1,7 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://x3fi44k3g4e0"]
+[gd_scene load_steps=6 format=3 uid="uid://x3fi44k3g4e0"]
 
 [ext_resource type="Texture2D" uid="uid://crqjjsfhg43f7" path="res://assets/images/exit.png" id="1_412bu"]
 [ext_resource type="Script" uid="uid://bs4u8koims5v8" path="res://Scenes/Exit/Exit.gd" id="1_s21ug"]
+[ext_resource type="Shader" uid="uid://bmgfxh4h0bwxj" path="res://Scenes/Exit/Exit.gdshader" id="3_47t7y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jtuej"]
+shader = ExtResource("3_47t7y")
+shader_parameter/glow_color = Color(0.3, 0.8, 1, 1)
+shader_parameter/pulse_speed = 2.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s21ug"]
 size = Vector2(62, 61)
@@ -15,6 +21,7 @@ self_modulate = Color(0.186749, 0.825314, 8.08597e-06, 1)
 texture = ExtResource("1_412bu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+material = SubResource("ShaderMaterial_jtuej")
 position = Vector2(5, 4.5)
 shape = SubResource("RectangleShape2D_s21ug")
 

@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 enum EnemyState { Patrolling, Chasing, Searching }
 
+const BULLET = preload("res://Scenes/Bullet/Bullet.tscn")
 
 const SPEED: Dictionary[EnemyState, float] = {
 	EnemyState.Patrolling: 60.0,
@@ -94,7 +95,7 @@ func update_movement() -> void:
 	
 	var npp: Vector2 = nav_agent.get_next_path_position()
 	rotation = global_position.direction_to(npp).angle()
-	
+	#nav_agent.velocity = transform.x * SPEED
 	velocity = transform.x * SPEED[_state]
 	move_and_slide()
 
@@ -162,10 +163,10 @@ func set_label():
 func shoot() -> void:
 	if _state != EnemyState.Chasing: return
 	
-#	var b = BULLET.instantiate()
-#	b.global_position = global_position
-#	get_tree().current_scene.call_deferred("add_child", b)
-#	laser_sound.play()
+	var b = BULLET.instantiate()
+	b.global_position = global_position
+	get_tree().current_scene.call_deferred("add_child", b)
+	laser_sound.play()
 
 
 func _on_nav_agent_velocity_computed(safe_velocity: Vector2) -> void:

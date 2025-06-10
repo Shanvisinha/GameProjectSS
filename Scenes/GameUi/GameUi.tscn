@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwfbrlfob5j5e"]
+[gd_scene load_steps=6 format=3 uid="uid://bwfbrlfob5j5e"]
 
 [ext_resource type="Script" uid="uid://ndxonfd6csk" path="res://Scenes/GameUi/GameUi.gd" id="1_anb74"]
 [ext_resource type="LabelSettings" uid="uid://cv3dycugofki7" path="res://Resources/Lg_32_blue.tres" id="1_mb7aw"]
 [ext_resource type="LabelSettings" uid="uid://x5nr1vimn4e0" path="res://Resources/Green32.tres" id="3_anolp"]
+[ext_resource type="Shader" uid="uid://stwpa02cbkh3" path="res://Scenes/GameUi/GameUi.gdshader" id="4_tt7lr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5hvfd"]
+shader = ExtResource("4_tt7lr")
 
 [node name="GameUi" type="Control"]
 process_mode = 3
@@ -55,6 +59,7 @@ vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
+material = SubResource("ShaderMaterial_5hvfd")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
