@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d4i6i4xy4gffn" path="res://assets/images/Item2.png" id="4_aw1lf"]
 [ext_resource type="Texture2D" uid="uid://kvwaqfiwilcv" path="res://assets/images/security.png" id="5_5s61s"]
 [ext_resource type="Texture2D" uid="uid://l3jrq7r3sw3" path="res://assets/images/item1.png" id="5_7npjy"]
-[ext_resource type="Texture2D" uid="uid://cu2kneldfp383" path="res://assets/images/survivor1_gun.png" id="6_7npjy"]
+[ext_resource type="Texture2D" uid="uid://t7bru3f404f" path="res://assets/images/survivor1_gun.png" id="6_7npjy"]
 [ext_resource type="Texture2D" uid="uid://c8mdmjo5etxmc" path="res://assets/images/space_bar.png" id="8_5s61s"]
 [ext_resource type="Shader" uid="uid://cp5n8qvfevvka" path="res://Scenes/Main/Main2.gdshader" id="9_7npjy"]
 
